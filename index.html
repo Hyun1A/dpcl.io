@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Online Continual Learning on Hierarchical Label Expansion introduces a novel continual learning setup with inherent hierarchies.">
+  <meta name="keywords" content="Continual Learning, Hierarchical Multi-Label Classification, Deep Learning, Machine Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online Continual Learning on Hierarchical Label Expansion</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Online Continual Learning <br> on Hierarchical Label Expansion</h1>
+          <h2 class="title is-3 publication-title">ICCV 2023</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://icl.snu.ac.kr/members#h.2exipjc28vwg">Byung Hyun Lee</a><sup>1</sup><sup>,</sup><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://icl.snu.ac.kr/members#h.qlq4jccxfph2">Okchul Jung</a><sup>1</sup><sup>,</sup><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://ppolon.github.io/">Jonghyun Choi</a><sup>3</sup><sup>,</sup><sup>&#8224</sup>,</span>
+            <span class="author-block">
+              <a href="https://icl.snu.ac.kr/pi">Se Young Chun</a><sup>1</sup><sup>,</sup><sup>2</sup><sup>,</sup><sup>&#8224</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Dept. of Electrical and Computer Engineering,</span>
+            <span class="author-block"><sup>2</sup>INMC & IPAI, Seoul National University, Republic of Korea</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>3</sup>Yonsei University, Republic of Korea</span>
+          </div>
+          <div class="is-size-10 publication-authors">
+            <span class="author-block">* Equal contribution,</span>
+            <span class="author-block">&#8224 Corresponding authors</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2308.14374.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2308.14374"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!--
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Hyun1A/HLE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!--
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Continual learning (CL) enables models to adapt to new tasks and environments without 
+            forgetting previously learned knowledge. While current CL setups have ignored the relationship
+            between labels in the past task and the new task with or without small task overlaps, real-world 
+            scenarios often involve hierarchical relationships between old and new tasks, posing another 
+            challenge for traditional CL approaches. To address this challenge, we propose a novel 
+            multi-level hierarchical class incremental task configuration with an online learning 
+            constraint, called hierarchical label expansion (HLE). 
+          </p>
+          
+          <p>
+            Our configuration allows a network to first learn coarse-grained classes, with data 
+            labels continually expanding to more fine-grained classes in various hierarchy depths. 
+            To tackle this new setup, we propose a rehearsal-based method that utilizes hierarchy-aware 
+            pseudo-labeling to incorporate hierarchical class information. Additionally, we propose a 
+            simple yet effective memory management and sampling strategy that selectively adopts samples 
+            of newly encountered classes. Our experiments demonstrate that our proposed method can effectively 
+            use hierarchy on our HLE setup to improve classification accuracy across all levels of hierarchies, 
+            regardless of depth and class imbalance ratio, outperforming prior state-of-the-art works by 
+            significant margins while also outperforming them on the conventional disjoint, blurry and 
+            i-Blurry CL setups.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview of Hierarchical Label Expansion (HLE)</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure1_setup_comparison.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                Comparison sketch between conventional, blurry, and our HLE setups. (a) Conventional task-free online CL setup gradually introduces new classes and classifies data without task identification (b) Blurry task-free online CL setup where classes are divided into major and minor categories at each task, with varying proportions, leads to unclear task boundaries (c) Proposed HLE CL setup features class label expansion where child class labels are added to parent class labels throughout the learning process.    
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">HLE Scenarios</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure2_expansion_scenario.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                An illustration of two HLE scenarios. (a) In single-depth scenario, fine-grained classes grow horizontally from coarse-grained ones within the same level.  This scenario is further explored through dual-label (overlapping data) and single-label (disjoint data) setups(b) In multiple-depth scenario, classes grow vertically from coarse to fine across different hierarchy levels.
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"> Proposed Method (PL-FMS)</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure3_method.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                Sketch of our proposed method, PL-FMS’s two components: PL and FMS. (a) Pseudo-Labeling based memory management (PL) outlines the method of discarding a data sample, which will be replaced with incoming data, based on its effect on reducing loss, irrespective of its label’s nature (true or pseudo)..(b) Flexible Memory Sampling (FMS) shows formation of the training batch by filtering and compensating data samples.
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results: Single-depth Scenario</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/table_1.png"
+                      alt={"overview"}>
+              </img>
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure8_overlap.png"
+                      alt={"overview"}>
+              </img>            
+              <h2 className="subtitle has-text-centered">
+                Table and figures for experimental results of baseline methods and our proposed method (PL-FMS) evaluated on HLE setup for single-depth hierarchy scenario in CIFAR100, ImageNet-Hier100, and Stanford Cars. In the table, dual-label means overlapping data between tasks, and single-label means disjoint data between tasks. Classification accuracy on hierarchy level 1 and 2 at the final task (%) was measured for all datasets. In the figure, H=1 is parent classes and H=2 child classes. Task index 1 receives parent class labeled data and subsequent indexes receive child class labeled data. Each data point shows average accuracy over three runs (± std. deviation).
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results: Multi-depth Scenario</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/table_2.png"
+                      alt={"overview"}>
+              </img>
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure_11.png"
+                      alt={"overview"}>
+              </img>            
+              <h2 className="subtitle has-text-centered">
+                Table and figures for experimental results of baseline methods and our proposed method (PL-FMS) evaluated on the HLE setup for the multiple-depth hierarchy scenario in CIFAR100 and iNaturalist-19. The classification accuracy on all hierarchy levels at the final task(%) was measured for all datasets.</h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @InProceedings{lee2023hle,
+          author    = {Lee, Byung Hyun and Jung, Okchul and Choi, Jonghyun and Chun, Se Young},
+          title     = {Online Continual Learning on Hierarchical Label Expansion},
+          booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+          month     = {October},
+          year      = {2023},
+          pages     = {11761-11770}
+      }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
