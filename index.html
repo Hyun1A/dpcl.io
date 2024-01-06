@@ -175,127 +175,13 @@
     <!--/ Abstract. -->
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview of Hierarchical Label Expansion (HLE)</h2>
-          <div className="container is-max-desktop">
-              <img id="overview"
-                      height={"100%"}
-                      src="./static/figures/figure1_setup_comparison.png"
-                      alt={"overview"}>
-              </img>
-              <h2 className="subtitle has-text-centered">
-                Comparison sketch between conventional, blurry, and our HLE setups. (a) Conventional task-free online CL setup gradually introduces new classes and classifies data without task identification (b) Blurry task-free online CL setup where classes are divided into major and minor categories at each task, with varying proportions, leads to unclear task boundaries (c) Proposed HLE CL setup features class label expansion where child class labels are added to parent class labels throughout the learning process.    
-              </h2>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-  
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">HLE Scenarios</h2>
-          <div className="container is-max-desktop">
-              <img id="overview"
-                      height={"100%"}
-                      src="./static/figures/figure2_expansion_scenario.png"
-                      alt={"overview"}>
-              </img>
-              <h2 className="subtitle has-text-centered">
-                An illustration of two HLE scenarios. (a) In single-depth scenario, fine-grained classes grow horizontally from coarse-grained ones within the same level.  This scenario is further explored through dual-label (overlapping data) and single-label (disjoint data) setups(b) In multiple-depth scenario, classes grow vertically from coarse to fine across different hierarchy levels.
-              </h2>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-  
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3"> Proposed Method (PL-FMS)</h2>
-          <div className="container is-max-desktop">
-              <img id="overview"
-                      height={"100%"}
-                      src="./static/figures/figure3_method.png"
-                      alt={"overview"}>
-              </img>
-              <h2 className="subtitle has-text-centered">
-                Sketch of our proposed method, PL-FMS’s two components: PL and FMS. (a) Pseudo-Labeling based memory management (PL) outlines the method of discarding a data sample, which will be replaced with incoming data, based on its effect on reducing loss, irrespective of its label’s nature (true or pseudo)..(b) Flexible Memory Sampling (FMS) shows formation of the training batch by filtering and compensating data samples.
-              </h2>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-  
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Results: Single-depth Scenario</h2>
-          <div className="container is-max-desktop">
-              <img id="overview"
-                      height={"100%"}
-                      src="./static/figures/table_1.png"
-                      alt={"overview"}>
-              </img>
-              <img id="overview"
-                      height={"100%"}
-                      src="./static/figures/figure8_overlap.png"
-                      alt={"overview"}>
-              </img>            
-              <h2 className="subtitle has-text-centered">
-                Table and figures for experimental results of baseline methods and our proposed method (PL-FMS) evaluated on HLE setup for single-depth hierarchy scenario in CIFAR100, ImageNet-Hier100, and Stanford Cars. In the table, dual-label means overlapping data between tasks, and single-label means disjoint data between tasks. Classification accuracy on hierarchy level 1 and 2 at the final task (%) was measured for all datasets. In the figure, H=1 is parent classes and H=2 child classes. Task index 1 receives parent class labeled data and subsequent indexes receive child class labeled data. Each data point shows average accuracy over three runs (± std. deviation).
-              </h2>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
-  
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Results: Multi-depth Scenario</h2>
-          <div className="container is-max-desktop">
-              <img id="overview"
-                      height={"100%"}
-                      src="./static/figures/table_2.png"
-                      alt={"overview"}>
-              </img>
-              <img id="overview"
-                      height={"100%"}
-                      src="./static/figures/figure_11.png"
-                      alt={"overview"}>
-              </img>            
-              <h2 className="subtitle has-text-centered">
-                Table and figures for experimental results of baseline methods and our proposed method (PL-FMS) evaluated on the HLE setup for the multiple-depth hierarchy scenario in CIFAR100 and iNaturalist-19. The classification accuracy on all hierarchy levels at the final task(%) was measured for all datasets.</h2>
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      @InProceedings{lee2023hle,
-          author    = {Lee, Byung Hyun and Jung, Okchul and Choi, Jonghyun and Chun, Se Young},
-          title     = {Online Continual Learning on Hierarchical Label Expansion},
-          booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-          month     = {October},
-          year      = {2023},
-          pages     = {11761-11770}
-      }</code></pre>
+      TBI
+    </code></pre>
   </div>
 </section>
 
