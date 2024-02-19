@@ -138,13 +138,70 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation of Considering Future Sample</h2>
+          <div className="container is-max-desktop">
+              <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure0_motivation.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                In the paradigm of TF-CL, the gold standard is to train with entire data from the past, present, and future. Therefore, we proactively consider a unknown future sample, which conventional approaches in TF-CL didn't considered before.
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Analysis of Considering a Future Sample in TF-CL</h2>
+          <div className="container is-max-desktop">
+            <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure1_euqations.png"
+                      alt={"overview"}>
+            </img>  
+            <img id="overview"
+                      height={"100%"}
+                      src="./static/figures/figure1_intuition.png"
+                      alt={"overview"}>
+              </img>
+              <h2 className="subtitle has-text-centered">
+                The novel framework of TF-CL (1) can be relaxed to the problem of miniminzg adversarial loss on both input and weight. Intuitively, the adversarial loss flattens the input and weight loss landscape.
+              </h2>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+
+
+
+
+
+
+  
+<section class="section">
+  <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Task-free online continual learning (TF-CL) is a challenging
+            Task Free online continual learning (TF-CL) is a challenging
             problem where the model incrementally learns tasks without
             explicit task information. Although training with entire
             data from the past, present as well as future is considered
@@ -176,6 +233,9 @@
 </section>
 
 
+
+
+  
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
